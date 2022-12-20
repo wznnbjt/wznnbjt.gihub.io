@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第一个图表</title>
+    <script src="js/echarts.min.js"></script>
+</head>
+<body>
+     <div id="main" style="width: 600px;height:400px;"></div>
+      <script type="text/javascript">
+      var myChart = echarts.init(document.getElementById('main'));
+      var option = {
+        title: {
+          text: '空气质量主要污染物状况',
+          left:'center',
+          textStyle:{
+            color:'rgb(128,128,128)',
+          }
+        },
+        tooltip: {},
+        legend: {
+            right:20,
+            orient:'vertical',
+          data: ['重庆','成都']
+        },
+        xAxis: {
+          data: ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
+        },
+        yAxis: {},
+        series: [
+          {
+            name: '重庆',
+            type: 'bar',
+            data: [17.8, 3.8, 21.4, 10.5, 9.5, 17.2]
+          },
+          {
+            name: '成都',
+            type: 'bar',
+            data: [12.1, 13.8, 10.4, 1.2, 3.5, 22.1]
+          }
+        ]
+      };
+      myChart.setOption(option);
+    </script>
+  </body>
+</html>
+</body>
+</html>
